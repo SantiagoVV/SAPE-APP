@@ -1,62 +1,20 @@
-library(shiny)
-library(shinythemes)
-library(shinyjs)
-library(DT)
-library(shinydashboard)
-library(shinyWidgets)
-library(ggplot2)
-library(matrixStats)
-library(lsr)
-library(agricolae)
 
-library(nortest)
-library(modeest)
-library(plyr)
-library(dplyr)
-library(data.table)
-library(purrr)
-library(shinyauthr)
-library(scales)
-library(DescTools)
-library(psycho)
-library(parameters)
-library(see)
-library(corrplot)
-library(ltm)
-library(rcompanion)
-
-library(nortest)
-library(car)
-
-library(bslib)
 thematic::thematic_shiny(font = "auto")
 
-library(knitr)
-library(kableExtra)
-library(fBasics)
+ipak <- function(pkg){
+  new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+  if (length(new.pkg)) 
+    install.packages(new.pkg, dependencies = TRUE)
+  sapply(pkg, require, character.only = TRUE)
+}
 
 
+packages <- c("shiny","shinythemes","shinyjs","DT","shinydashboard","shinyWidgets","ggplot2","matrixStats","lsr","agricolae",
+              "nortest","modeest","plyr","dplyr","data.table","purrr","shinyauthr","scales","DescTools","psycho","parameters",
+              "see","corrplot","ltm","rcompanion","nortest","car","bslib","knitr","kableExtra","fBasics","stringi","tidyverse",
+              "readr","stringr","stringi","berryFunctions","vcd","psych","polycor","ggcorrplot","GGally","Hmisc","corrplot","PerformanceAnalytics")
 
-
-library(stringi)
-library(tidyverse)
-
-
-library(readr)
-library(stringr)
-library(stringi)
-library(berryFunctions)
-
-library(vcd)
-
-library(psych)
-library(polycor)
-library(ggcorrplot)
-library(GGally)
-library(Hmisc)
-library(corrplot)
-library(PerformanceAnalytics)
-
+ipak(packages)
 
 user_base <- tibble::tibble(
   user = c("user1", "user2"),
@@ -82,7 +40,7 @@ ui <- fluidPage(  theme = shinytheme("superhero"),
 server <- function(input, output, session) {
   
   ruta <- "E:/Pruebas_R_CSV_WRITE/"
-  
+  ipak(packages)
    
   
   
