@@ -9,7 +9,6 @@ library(matrixStats)
 library(lsr)
 library(agricolae)
 
-
 library(nortest)
 library(modeest)
 library(plyr)
@@ -57,6 +56,7 @@ library(GGally)
 library(Hmisc)
 library(corrplot)
 library(PerformanceAnalytics)
+
 
 user_base <- tibble::tibble(
   user = c("user1", "user2"),
