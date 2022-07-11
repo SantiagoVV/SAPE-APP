@@ -39,7 +39,10 @@ ui <- fluidPage(  theme = shinytheme("superhero"),
 
 server <- function(input, output, session) {
   
-  ruta <- "E:/Pruebas_R_CSV_WRITE/"
+  ruta <- tempdir()
+  ruta <- gsub('\\\\', "/", ruta)
+  ruta <- paste(ruta,"/")
+  ruta <- gsub(' ', "", ruta)
   ipak(packages)
    
   
